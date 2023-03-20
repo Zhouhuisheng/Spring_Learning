@@ -1,4 +1,5 @@
-import com.kuang.dao.UserDaoImpl;
+import com.kuang.service.UserService;
+import com.kuang.service.UserServiceImpl;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -9,11 +10,11 @@ public class MyTest {
      *      2. 对象的属性是由Spring容器设置的
      */
     public static void main(String[] args) {
-        // 获取Spring的上下文对象
+        // 获取ApplicationContext: 拿到Spring容器
         ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
-        // 我们的对象现在都在Spring中管理了，我们要使用，直接从里面取出来即可
-        UserDaoImpl userDaoImpl = (UserDaoImpl)context.getBean("userDaoImpl");
+        // 容器在手，需要什么就get什么
+        UserServiceImpl userServiceImpl = (UserServiceImpl)context.getBean("userServiceImpl");
         // 测试
-        System.out.println(userDaoImpl.toString());
+        userServiceImpl.getUser();
     }
 }
