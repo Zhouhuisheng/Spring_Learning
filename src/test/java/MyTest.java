@@ -10,9 +10,9 @@ public class MyTest {
      */
     public static void main(String[] args) {
         // 获取ApplicationContext: 拿到Spring容器
-        ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
         // 容器在手，需要什么就get什么
-        User user = (User)context.getBean("user");
+        User user = (User)context.getBean("u3");
         // 测试
         System.out.println(user.toString());
     }
