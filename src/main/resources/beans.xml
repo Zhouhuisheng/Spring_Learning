@@ -3,6 +3,9 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!-- 配置xml文件 可以通过id获取UserServiceImpl对象 -->
-    <bean id="userService" class="com.itheima.service.impl.UserServiceImpl"></bean>
+    <!-- 配置UserDao -->
+    <bean id="userDaoImpl" class="com.kuang.dao.UserDaoImpl">
+        <!-- 可以在创建对象时设置初值 -->
+        <property name="name" value="学习Spring"/>
+    </bean>
 </beans>
