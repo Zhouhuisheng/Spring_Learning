@@ -1,5 +1,4 @@
-import com.kuang.service.UserService;
-import com.kuang.service.UserServiceImpl;
+import com.kuang.pojo.User;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -13,8 +12,8 @@ public class MyTest {
         // 获取ApplicationContext: 拿到Spring容器
         ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
         // 容器在手，需要什么就get什么
-        UserServiceImpl userServiceImpl = (UserServiceImpl)context.getBean("userServiceImpl");
+        User user = (User)context.getBean("user");
         // 测试
-        userServiceImpl.getUser();
+        System.out.println(user.toString());
     }
 }

@@ -3,15 +3,23 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="mysqlImpl" class="com.kuang.dao.UserDaoMysqlImpl"></bean>
-    <bean id="oracleImpl" class="com.kuang.dao.UserDaoOracleImpl"></bean>
 
-    <bean id="userServiceImpl" class="com.kuang.service.UserServiceImpl">
-        <!--
-            value: 具体的值，基本数据类型！
-            ref: 引用Spring容器中创建好的对象
-         -->
-        <property name="userDao" ref="oracleImpl"/>
+    <!-- &lt;!&ndash; 第一种，下标赋值 &ndash;&gt; -->
+    <!-- <bean id="user" class="com.kuang.pojo.User"> -->
+    <!--     &lt;!&ndash; index是构造函数的参数的下标 从0开始 &ndash;&gt; -->
+    <!--     <constructor-arg index="0" value="周辉生"/> -->
+    <!-- </bean> -->
+
+    <!-- &lt;!&ndash; 第二种，通过类型创建（不建议使用，因为多个参数都是同一类型时不好用） &ndash;&gt; -->
+    <!-- <bean id="user" class="com.kuang.pojo.User"> -->
+    <!--     &lt;!&ndash; type：参数的类型 &ndash;&gt; -->
+    <!--     <constructor-arg type="java.lang.String" value="周辉生"/> -->
+    <!-- </bean> -->
+
+    <!-- 第三种，通过参数名赋值 -->
+    <bean id="user" class="com.kuang.pojo.User">
+        <!-- 通过参数名赋值 -->
+        <constructor-arg name="name" value="周辉生"/>
     </bean>
 
 </beans>
