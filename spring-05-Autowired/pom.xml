@@ -5,15 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.example</groupId>
-        <artifactId>spring_Learning</artifactId>
+        <artifactId>spring-04-di</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>spring-04-di</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>spring-05-Autowired</module>
-    </modules>
+    <artifactId>spring-05-Autowired</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
