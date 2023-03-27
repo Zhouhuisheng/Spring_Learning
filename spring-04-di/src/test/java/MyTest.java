@@ -34,4 +34,30 @@ public class MyTest {
         // 测试
         System.out.println(user.toString());
     }
+
+    /**
+     * 测试Bean作用域 Singleton（默认）
+     */
+    @Test
+    public void testSingleton() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("userbeans.xml");
+        User user1 = (User) context.getBean("user");
+        User user2 = (User) context.getBean("user");
+
+        // 测试
+        System.out.println(user1 == user2); // true 表示两个对象是同一个
+    }
+
+    /**
+     * 测试Bean作用域 Prototype（原型模式）
+     */
+    @Test
+    public void testPrototype() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("userbeans.xml");
+        User user1 = (User) context.getBean("user2");
+        User user2 = (User) context.getBean("user2");
+
+        // 测试
+        System.out.println(user1 == user2); // false 表示两个对象不是同一个
+    }
 }

@@ -6,14 +6,12 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!--
-        p命名空间注入，可以直接注入属性的值 property
-        使用p命名空间需要依赖第三方约束 xmlns:p="http://www.springframework.org/schema/p"
+        singleton：定义bean的范围为每个Spring容器一个实例，默认值
      -->
-    <bean name="user" class="com.kuang.pojo.User" p:name="小明" p:age="18"></bean>
+    <bean name="user" class="com.kuang.pojo.User" scope="singleton"></bean>
 
     <!--
-        c命名空间注入，可以通过构造器注入 construct-args
-        使用c命名空间需要依赖第三方约束 xmlns:c="http://www.springframework.org/schema/c"
+        prototype：允许bean可以被多次实例化，使用一次就创建一个实例
     -->
-    <bean name="user2" class="com.kuang.pojo.User" c:name="小红" c:age="20"></bean>
+    <bean name="user2" class="com.kuang.pojo.User" scope="prototype"></bean>
 </beans>
