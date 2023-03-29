@@ -11,9 +11,6 @@
 
     <artifactId>spring-04-di</artifactId>
     <packaging>pom</packaging>
-    <modules>
-        <module>spring-05-Autowired</module>
-    </modules>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
