@@ -1,7 +1,17 @@
 package com.kuang.pojo;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+
 public class People {
+    /**
+     * @Autowired 可以在属性上使用 也可以在set方法上使用
+     * 使用注解实现自动装配可以不写set方法 因为原理是用反射实现的
+     */
+    @Autowired
+    @Qualifier(value = "cat1")
     private Cat cat;
+    @Autowired
     private Dog dog;
     private String name;
 
@@ -9,23 +19,11 @@ public class People {
         return cat;
     }
 
-    public void setCat(Cat cat) {
-        this.cat = cat;
-    }
-
     public Dog getDog() {
         return dog;
     }
 
-    public void setDog(Dog dog) {
-        this.dog = dog;
-    }
-
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 }
